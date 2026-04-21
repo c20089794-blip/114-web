@@ -1,4 +1,4 @@
-lab1<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,13 @@ lab1<!DOCTYPE html>
         h1 {
             color: #1a73e8; /* 標題顏色 */
             font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: #5f6368;
             margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         .nav-container {
@@ -36,20 +42,25 @@ lab1<!DOCTYPE html>
             background-color: #34a853; /* 按鈕顏色 */
             text-decoration: none; /* 去掉超連結底線 */
             border-radius: 8px; /* 圓角 */
-            transition: background-color 0.3s, transform 0.2s;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         /* 當滑鼠移到按鈕上時的效果 */
         .nav-button:hover {
             background-color: #2d8e47;
-            transform: translateY(-2px); /* 輕微往上浮動 */
+            transform: translateY(-3px); /* 輕微往上浮動 */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         /* 適合手機瀏覽的調整 */
         @media (max-width: 600px) {
             .nav-container {
                 flex-direction: column;
+                width: 80%;
+            }
+            .nav-button {
+                text-align: center;
             }
         }
     </style>
@@ -58,13 +69,14 @@ lab1<!DOCTYPE html>
 
     <!-- 網站標題 -->
     <h1>114 Web Labs</h1>
+    <p class="subtitle">歡迎來到網頁開發實驗室</p>
 
     <!-- 導覽連結區塊 -->
     <div class="nav-container">
-        <!-- 這裡是超連結，點了會連到對應的檔案 -->
-        <a href="lab1.html" class="nav-button">進入 Lab 1</a>
-        <a href="lab2.html" class="nav-button">進入 Lab 2</a>
-        <a href="lab3.html" class="nav-button">進入 Lab 3</a>
+        <!-- 注意：這裡的路徑改為指向資料夾裡的 index.html -->
+        <a href="lab1/index.html" class="nav-button">進入 Lab 1</a>
+        <a href="lab2/index.html" class="nav-button">進入 Lab 2</a>
+        <a href="lab3/index.html" class="nav-button">進入 Lab 3</a>
     </div>
 
 </body>
