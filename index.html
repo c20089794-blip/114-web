@@ -1,295 +1,71 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
+lab1<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>謝承峻的個人學習歷程檔案</title>
-    <!-- 這裡通常會用 <link rel="stylesheet" href="style.css"> 連結外部檔案 -->
+    <title>114 Web Labs</title>
     <style>
-        /* CSS 樣式部分 
-           這部分可以獨立剪下存成 style.css
-        */
-        
-        /* 1. 基礎設定 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-        }
-
+        /* 這裡是 CSS：負責調整網站的外觀 */
         body {
-            background-color: #f8f9fa; /* 淺灰色背景 */
-            color: #333;
-            line-height: 1.8;
-        }
-
-        /* 2. 導覽列 */
-        nav {
-            background-color: #ffffff;
-            height: 70px;
+            font-family: "Microsoft JhengHei", Arial, sans-serif; /* 設定字體 */
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            height: 100vh; /* 讓內容垂直居中 */
+            margin: 0;
+            background-color: #f0f2f5; /* 背景顏色 */
         }
 
-        nav a {
-            text-decoration: none;
-            color: #555;
-            margin: 0 20px;
-            font-weight: 500;
-            transition: color 0.3s;
+        h1 {
+            color: #1a73e8; /* 標題顏色 */
+            font-size: 3rem;
+            margin-bottom: 2rem;
         }
 
-        nav a:hover {
-            color: #3498db; /* 藍色亮點 */
-        }
-
-        /* 3. 橫幅區域 (Hero Section) */
-        .hero {
-            background: linear-gradient(135deg, #3498db, #8e44ad); /* 漸層色 */
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* 4. 內容容器 */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        /* 5. 關於我區塊 */
-        .profile-section {
+        .nav-container {
             display: flex;
-            align-items: center;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            gap: 20px; /* 按鈕之間的間距 */
         }
 
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            background-color: #ddd;
-            border-radius: 50%;
-            margin-right: 40px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-text h2 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        /* 6. 作業展示區 (Grid 佈局) */
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 1.8rem;
-            color: #2c3e50;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-tag {
+        .nav-button {
             display: inline-block;
-            padding: 3px 10px;
-            background: #e1f5fe;
-            color: #0288d1;
-            font-size: 0.8rem;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .card p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            text-decoration: none;
-            background-color: #3498db;
+            padding: 15px 30px;
+            font-size: 1.2rem;
             color: white;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            display: inline-block;
-            transition: 0.3s;
+            background-color: #34a853; /* 按鈕顏色 */
+            text-decoration: none; /* 去掉超連結底線 */
+            border-radius: 8px; /* 圓角 */
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .btn:hover {
-            background-color: #2980b9;
+        /* 當滑鼠移到按鈕上時的效果 */
+        .nav-button:hover {
+            background-color: #2d8e47;
+            transform: translateY(-2px); /* 輕微往上浮動 */
         }
 
-        /* 7. 聯絡資訊與頁尾 */
-        footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 50px 20px;
-            margin-top: 50px;
-        }
-
-        .contact-info {
-            margin-bottom: 20px;
-        }
-
-        .copyright {
-            font-size: 0.8rem;
-            color: #95a5a6;
-        }
-
-        /* 響應式調整：手機版 */
-        @media (max-width: 768px) {
-            .profile-section {
+        /* 適合手機瀏覽的調整 */
+        @media (max-width: 600px) {
+            .nav-container {
                 flex-direction: column;
-                text-align: center;
-            }
-            .profile-image {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- 導覽列 -->
-    <nav>
-        <a href="#home">首頁</a>
-        <a href="#about">關於我</a>
-        <a href="#projects">作業展示</a>
-        <a href="#contact">聯絡我</a>
-    </nav>
+    <!-- 網站標題 -->
+    <h1>114 Web Labs</h1>
 
-    <!-- 標題橫幅 -->
-    <header class="hero" id="home">
-        <h1>謝承峻 的學習歷程</h1>
-        <p>專注於資訊科技、社會科學與多元探索的高中生活記錄</p>
-    </header>
-
-    <div class="container">
-        
-        <!-- 關於我 -->
-        <section class="profile-section" id="about">
-            <div class="profile-image">
-                <!--  -->
-                <img src="https://via.placeholder.com/150" alt="謝承峻的個人照片">
-            </div>
-            <div class="profile-text">
-                <h2>關於我</h2>
-                <p>你好！我是謝承峻。我目前就讀於 [學校名稱]，我對資訊科技與數位創作充滿熱忱。這個網站是用來存放我這學期的各科作業、實驗報告以及自主學習的成果，希望能完整記錄我的學習點滴。</p>
-            </div>
-        </section>
-
-        <!-- 作業展示區 -->
-        <h2 class="section-title" id="projects">作業與專題</h2>
-        <div class="project-grid">
-            
-            <!-- 作業卡片 1 -->
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-tag">資訊課</span>
-                    <h3>個人網頁設計範本</h3>
-                    <p>使用 HTML5 與 CSS3 打造的響應式網頁，展示基礎的前端開發技能與排版設計。</p>
-                    <a href="#" class="btn">閱讀更多</a>
-                </div>
-            </div>
-
-            <!-- 作業卡片 2 -->
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-tag">國文課</span>
-                    <h3>現代詩創作與賞析</h3>
-                    <p>本學期關於現代文學的習作，包含三首自創詩以及對徐志摩作品的深入分析報告。</p>
-                    <a href="#" class="btn">閱讀更多</a>
-                </div>
-            </div>
-
-            <!-- 作業卡片 3 -->
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-tag">自主學習</span>
-                    <h3>Python 基礎語法筆記</h3>
-                    <p>記錄了我在寒假期間自主學習 Python 的過程，包含環境安裝、變數處理到簡單的迴圈練習。</p>
-                    <a href="#" class="btn">閱讀更多</a>
-                </div>
-            </div>
-
-        </div>
-
+    <!-- 導覽連結區塊 -->
+    <div class="nav-container">
+        <!-- 這裡是超連結，點了會連到對應的檔案 -->
+        <a href="lab1.html" class="nav-button">進入 Lab 1</a>
+        <a href="lab2.html" class="nav-button">進入 Lab 2</a>
+        <a href="lab3.html" class="nav-button">進入 Lab 3</a>
     </div>
-
-    <!-- 頁尾與聯絡方式 -->
-    <footer id="contact">
-        <div class="contact-info">
-            <h3>聯絡資訊</h3>
-            <p>電子郵件: yourname@example.com</p>
-            <p>學校: [你的學校名稱]</p>
-        </div>
-        <p class="copyright">
-            &copy; 2024 謝承峻 版權所有. 僅供學術作業使用.
-        </p>
-    </footer>
 
 </body>
 </html>
