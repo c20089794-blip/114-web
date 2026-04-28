@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡通風格網頁</title>
+    <style>
+        /* 載入 Google Fonts 可愛字體 */
+        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+        /* 整體頁面設定 */
+        body {
+            font-family: 'ZCOOL KuaiLe', 'Microsoft JhengHei', cursive, sans-serif;
+            background-color: #ffefba; /* 溫暖的淺黃色背景 */
+            background-image: radial-gradient(#ffe082 2px, transparent 2px);
+            background-size: 30px 30px; /* 點點背景網點效果 */
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* 容器裝飾 */
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 4px solid #000; /* 超粗黑色邊框 */
+            border-radius: 30px;
+            box-shadow: 12px 12px 0px #f39c12; /* 硬派陰影 */
+            position: relative;
+        }
+
+        /* 主標題 */
+        h1 {
+            color: #e74c3c;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0px #000; /* 文字描邊效果 */
+            -webkit-text-stroke: 1px #000;
+        }
+
+        /* 副標題 */
+        h2 {
+            color: #2ecc71;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            transform: rotate(-2deg); /* 稍微傾斜增加動感 */
+            background: #000;
+            display: inline-block;
+            padding: 5px 15px;
+            color: #fff;
+            border-radius: 10px;
+        }
+
+        /* 段落 */
+        p {
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: bold;
+        }
+
+        /* 分隔線 (波浪感) */
+        hr {
+            margin: 30px auto;
+            width: 80%;
+            border: none;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                #3498db,
+                #3498db 10px,
+                #2980b9 10px,
+                #2980b9 20px
+            );
+            border-radius: 5px;
+            border: 2px solid #000;
+        }
+
+        /* 連結按鈕 (Q彈感) */
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 40px;
+            background-color: #f1c40f;
+            color: #000;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 900;
+            border: 4px solid #000;
+            border-radius: 50px;
+            box-shadow: 0px 6px 0px #000;
+            transition: all 0.1s ease;
+            cursor: pointer;
+        }
+
+        /* 滑鼠移上效果 */
+        a:hover {
+            background-color: #f39c12;
+            transform: translateY(3px); /* 點擊下壓感 */
+            box-shadow: 0px 3px 0px #000;
+        }
+
+        /* 裝飾小配件 */
+        .star {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 40px;
+            animation: spin 3s infinite linear;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="star">⭐</div>
+        <h1>超級大標題！</h1>
+        <h2>這是酷炫的副標題</h2>
+        
+        <p>歡迎來到我的卡通世界！這裡充滿了色彩與驚奇。所有的元素都穿上了黑色的粗邊框，看起來就像從漫畫書裡跳出來一樣！</p>
+        
+        <hr>
+        
+        <p>點擊下方的按鈕，開啟你的冒險旅程吧！</p>
+        
+        <a href="#">立即出發！</a>
+    </div>
+
+</body>
+</html>
